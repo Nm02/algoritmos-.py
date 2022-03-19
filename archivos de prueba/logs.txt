@@ -1,0 +1,15 @@
+01/01/2010jcmartine www.infobae.com     12 
+01/01/2010alperez   www.clarin.com      15 
+02/01/2010alperez   www.google.com      5  
+02/01/2010jcmartine www.infobae.com     2  
+02/01/2010jlopez    www.ucasal.edu.ar   30 
+03/01/2010asosas    www.infobae.com     20 
+05/01/2010alperez   www.monografias.com 5  
+05/01/2010jcmartine www.ucasal.edu.ar   10 
+05/01/2010alperez   www.infobae.com     23 
+05/01/2010jcmartine www.facebook.com    16 
+06/01/2010alperez   www.infobae.com     20 
+06/01/2010asosas    www.facebook.com    43 
+06/01/2010ecrosas   www.ucasal.edu.ar   31 
+07/01/2010ecrosas   www.facebook.com    10 
+07/01/2010alperez   www.infobae.com     10 

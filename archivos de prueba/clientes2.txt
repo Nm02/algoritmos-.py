@@ -1,0 +1,4 @@
+454,Perez Juan,1400
+456,Nito Pedro,200
+200,Lopez Maria,1200
+121,Torres Juana,450.90

@@ -1,0 +1,10 @@
+la lista de alumnos promocionados es:
+El alumno Morillo  Ana promociono.
+El alumno Bueno Cerdeira Patricia promociono.
+El alumno Diaz Souto Sofia promociono.
+El alumno Garcia Perez Lucia promociono.
+El alumno Sanchez Maria promociono.
+El alumno Lorenzo  Jaime promociono.
+El alumno Muñoz Carolina promociono.
+El alumno Moreno Angulo Antonio promociono.
+El alumno Viale Jorge  promociono.
