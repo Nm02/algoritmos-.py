@@ -71,6 +71,7 @@ def Mostrar_listado_de_páginas_visitadas_por_un_usuario_dado(usuarios,paginas):
                 ban1=1
     if ban1==0:
       print("Este usuario no visito ninguna pagina")
+
 def BuscarCuantasVecesSeVisitoCadaPagina(paginas):
     PaginasYaTomadas=[]
     for i in range(0,len(paginas)):
@@ -79,13 +80,13 @@ def BuscarCuantasVecesSeVisitoCadaPagina(paginas):
             if PaginasYaTomadas[j][0]!=paginas[i]:
               A=A+1  
             else:
-              PaginasYaTomadas[j][1]=PaginasYaTomadas[j][1]+1  
+              PaginasYaTomadas[j][1]+=1  
         if A==len(PaginasYaTomadas):
-
           PaginasYaTomadas.append([])
           PaginasYaTomadas[len(PaginasYaTomadas)-1].append(paginas[i])
           PaginasYaTomadas[len(PaginasYaTomadas)-1].append(1)
     return PaginasYaTomadas
+
 def Mostrar_la_página_que_tuvo_mayor_cantidad_de_visitas_El_usuario_que_mas_navego(PaginasYCantidadDeVisitas,mensaje1,mensaje2,mensaje3):
   MayorCantidad=PaginasYCantidadDeVisitas[0][1]
   MayorPagina=PaginasYCantidadDeVisitas[0][0]
@@ -94,6 +95,7 @@ def Mostrar_la_página_que_tuvo_mayor_cantidad_de_visitas_El_usuario_que_mas_nav
       MayorCantidad=PaginasYCantidadDeVisitas[i][1]
       MayorPagina=PaginasYCantidadDeVisitas[i][0]
   print(mensaje1,MayorPagina,mensaje2,MayorCantidad,mensaje3)
+
 def BuscarCuantoTiempoSeVisitoCadaPagina_NavegoCadaUsuario(paginas,minutos):
     PaginasYaTomadas=[]
     for i in range(0,len(paginas)):
