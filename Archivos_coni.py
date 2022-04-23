@@ -1,4 +1,7 @@
 #elimina los espacion en una palabra
+from tkinter.filedialog import dialogstates
+
+
 def EliminarEspacios(palabra):
     while " " in palabra:
         palabra=palabra.replace(" ","")
@@ -15,7 +18,7 @@ def Leer_Archivo(file):
             matriz["usuario"].append(EliminarEspacios(linea[10:20]))
             matriz["pagina"].append(EliminarEspacios(linea[20:40]))
             matriz["minutos"].append(int(EliminarEspacios(linea[40:43])))
-        return matriz
+    return matriz
 
 #Se ingres la lista de usuarios y la lista de paginas. busca las paginas que visito el ususario. Si no esta en la lista
 #la agrega y se pone un contador en 1, si si esta se aumenta el contador de dicha pagina en 1. luego muestra la lista
@@ -103,11 +106,84 @@ def Mostrar_lista_tiempo_ordenada(paginas,minutos):
     for i in range(len(list_pag_min)):
         print(list_pag_min[i][0]," ",list_pag_min[i][1])
 
+#Se ingresa una nueva fecha con el formato que se necesita
+def ingrese_fecha():
+    while True:
+        dia=int(input("ingrese dia:"))
+        if dia>0 and dia<32:
+            if dia<10:
+                dia="0"+str(dia)
+            else:
+                dia=str(dia)
+            while True:
+                mes=int(input("ingrese mes:"))
+                if mes>0 and mes<13:
+                    if mes<10:
+                        mes="0"+str(mes)
+                    else:
+                        mes=str(mes)
+                    while True:
+                        año=int(input("ingrese año:"))
+                        if 2000<año<2050:
+                            return dia+"/"+mes+"/"+str(año)
+                        else:
+                            print("Ingrese un alo valido(ente 2001 y 2049)")
+                else:
+                    print("ingrese un numero entre 1 y 12.")
+        else:
+            print("ingrese un numero entre 1 y 31.")
 
+#Ingresa un usuario con el formato necesario
+def ingrese_usuario():
+    while True:
+        usuario=input("ingrese nombre de usuario:")
+        if 0<len(usuario)<11:
+            for i in range(len(usuario),10):
+                usuario+=" "
+            return usuario
+        else:
+            print("Ingrese un nombre de usuario con hasta 10 caracteres")
+    
 
-file="archivos_de_prueba\\logs.txt"
-tabla=Leer_Archivo(file)
+#Se ingresa el nombre de la pagina y se la convierte para darle el formato adecuado
+def ingrese_pagina():
+    12
+    while True:
+        pagina=input("Ingrese el nombre de la pagina (no incluya www. ni .com):")
+        if 0<len(pagina)<13:
+            pagina="www."+pagina+".com"
+            for i in range(len(pagina),20):
+                pagina+=" "
+            return pagina
+        else:
+            pagina("El nombre debe tener entre 1 y 12 caracteres.")
+    
+
+#Se carga el tiepo en minutos.
+def ingrese_timepo():
+    while True:
+        tiempo=int(input("Ingrese el tiempo en minutos:"))
+        if 0<tiempo<999:
+            tiempo=str(tiempo)
+            for i in range(len(tiempo),3):
+                tiempo+=" "
+            return tiempo
+        else:
+            print("Ingrese un timepo valido")
+
+#Escribe un nuevo registro de visita de pagina de un usuario
+def Agregar_registro(file):
+    with open(file,"r+") as f:
+        f.readlines()
+        f.write("\n")
+        f.write(ingrese_fecha())
+        f.write(ingrese_usuario())
+        f.write(ingrese_pagina())
+        f.write(ingrese_timepo())
+
+# file="archivos_de_prueba\\logs.txt"
+# tabla=Leer_Archivo(file)
 # Mostrar_listado_de_páginas_visitadas_por_un_usuario_dado(tabla["usuario"],tabla["pagina"])
 # Mostrar_pagina_mas_visitada(tabla["pagina"])
-#Mostrar_lista_tiempo_ordenada(tabla["pagina"],tabla["minutos"])
-
+# Mostrar_lista_tiempo_ordenada(tabla["pagina"],tabla["minutos"])
+# Agregar_registro(file)
