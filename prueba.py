@@ -21,5 +21,3 @@ banco3="macro"
 existe(banco1)
 existe(banco2)
 existe(banco3)
-
-print("hola")
